@@ -1,5 +1,5 @@
 {
-  "name": "r2d2-eslint",
+  "name": "r2d2-lint-config",
   "version": "0.0.0",
   "files": [
     "index.js",
