@@ -1,46 +1,56 @@
-# ESLint Config
-This package provides the Royal Navy [ESLint](https://eslint.org/) configuration.
+# R2D2 Lint Config
+This package provides linting configuration to React Apps.
+
+@todo write readme
+@todo pipeline
 
 ## Installation
-The Royal Navy ESLint config is available as an NPM package.
+This is available as an NPM package or via got directly.
+
+### NPM
+
+The package registry is on Github so you will need to apply a scoped registry to your `~/.npmrc`
 
 ```
-// npm
-npm install @royalnavy/eslint-config-react
-
-// yarn
-yarn add @royalnavy/eslint-config-react
+@defencedigital:registry=https://npm.pkg.github.com/
 ```
+
+The you can install via `yarn` or `npm`
+
+**NPM**
+```
+$ npm install @defencedigital/r2d2-lint-config
+```
+
+**yarn**
+```
+yarn add @defencedigital/r2d2-lint-config
+```
+
+### Git
+
+You can install directly from Git referencing a commit, tag or branch
+
+```
+yarn add @defencedigital/r2d2-lint-config@https://github.com/defencedigital/r2d2-lint-config.git#<branch|commit|tag>
+```
+
+## Configuration
 
 In the root of your project create the following files:
 
-_.eslintrc.js_
+**`.eslintrc.js`**
 
 ```js
 module.exports = {
-  extends: ['@royalnavy/eslint-config-react'],
+  extends: ['@defencedigital/r2d2-lint-config'],
 }
 ```
 
-_.prettier.config.js_	
+**`.stylelintrc`**
 
-```js	
-module.exports = require('@royalnavy/eslint-config-react/prettier.config.js')
+```json	
+{
+  "extends": ["@defencedigital/r2d2-lint-config/stylelint.config"]
+}
 ```
-
-If you want to install the prerelease then use the `@next` distribution tag.
-
-## Questions
-The ESLint config package is maintained by a team at the Royal Navy. If you want to know more about the Royal Navy Design System, please email the [Design System Team](mailto:design-system@royalnavy.io).
-
-## Contributing
-The [contributing guide](https://github.com/Royal-Navy/design-system/blob/master/docs/contributing.md) resource presents information about our development process. 
-
-## Changelog
-If you have recently updated then read the [release notes](https://github.com/Royal-Navy/design-system/releases)
-
-## Roadmap
-The [Design System Roadmap Board](https://github.com/orgs/Royal-Navy/projects/5) contains the work that has been prioritised for the next 12 months.
-
-## License
-The Royal Navy Design System is licensed under the [Apache License 2.0](https://github.com/Royal-Navy/design-system/blob/master/LICENSE)
