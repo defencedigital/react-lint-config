@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "files": [
     "index.js",
-    "stylelint.config.js"
+    "stylelint.config.js",
+    "licenses.json"
   ],
   "license": "OGL-UK-3.0",
   "publishConfig": {
