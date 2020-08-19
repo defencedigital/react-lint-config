@@ -4,18 +4,18 @@ name: React component library
 on:
   push:
     branches:
-      - "*"
+      - "master"
 
 
 env:
   CI: true
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
 jobs:
   publish:
     name: Tag and publish
-    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -26,9 +26,11 @@ jobs:
           git config user.name $GITHUB_ACTOR
           git config user.email gh-actions-${GITHUB_ACTOR}@github.com
           yarn version --new-version patch
-          git push --tags origin
+          git add package.json
+          git push
+          git push --tags
 
       - name: Publish release
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
           npm publish

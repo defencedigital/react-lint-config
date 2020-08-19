@@ -7,7 +7,7 @@
   ],
   "license": "OGL-UK-3.0",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
+    "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "dependencies": {
@@ -35,5 +35,6 @@
   "bugs": {
     "url": "https://github.com/defencedigital/r2d2-eslint/issues"
   },
-  "homepage": "https://github.com/defencedigital/r2d2-eslint#readme"
+  "homepage": "https://github.com/defencedigital/r2d2-eslint#readme",
+  "main": "index.js"
 }

@@ -1,37 +1,28 @@
 # R2D2 Lint Config
+
 This package provides linting configuration to React Apps.
 
-@todo write readme
-@todo pipeline
-
 ## Installation
-This is available as an NPM package or via got directly.
 
-### NPM
+This package can be installed via `yarn` or `npm`
 
-The package registry is on Github so you will need to apply a scoped registry to your `~/.npmrc`
+### npm
 
-```
-@defencedigital:registry=https://npm.pkg.github.com/
-```
-
-The you can install via `yarn` or `npm`
-
-**NPM**
-```
-$ npm install @defencedigital/r2d2-lint-config
+```shell
+npm install @defencedigital/r2d2-lint-config
 ```
 
-**yarn**
-```
+### yarn
+
+```shell
 yarn add @defencedigital/r2d2-lint-config
 ```
 
-### Git
+### Development
 
-You can install directly from Git referencing a commit, tag or branch
+In development you can specify a git branch, commit or tag rather than using the latest release form the nom registry
 
-```
+```shell
 yarn add @defencedigital/r2d2-lint-config@https://github.com/defencedigital/r2d2-lint-config.git#<branch|commit|tag>
 ```
 
@@ -49,7 +40,7 @@ module.exports = {
 
 **`.stylelintrc`**
 
-```json	
+```json
 {
   "extends": ["@defencedigital/r2d2-lint-config/stylelint.config"]
 }
