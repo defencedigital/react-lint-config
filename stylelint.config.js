@@ -6,6 +6,7 @@ module.exports = {
   ignoreFiles: [
     './coverage/**/*',
     './dist/**/*',
+    './build/**/*',
     './node_modules/**/*',
     './src/**/__snapshots__/**/*',
   ],
