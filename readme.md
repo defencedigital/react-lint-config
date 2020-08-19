@@ -20,7 +20,7 @@ yarn add @defencedigital/r2d2-lint-config
 
 ### Development
 
-In development you can specify a git branch, commit or tag rather than using the latest release form the nom registry
+In development you can specify a git branch, commit or tag rather than using the latest release form the npm registry
 
 ```shell
 yarn add @defencedigital/r2d2-lint-config@https://github.com/defencedigital/r2d2-lint-config.git#<branch|commit|tag>
@@ -33,9 +33,8 @@ In the root of your project create the following files:
 **`.eslintrc.js`**
 
 ```js
-module.exports = {
-  extends: ['@defencedigital/r2d2-lint-config'],
-}
+const config = require('@defencedigital/r2d2-lint-config');
+module.exports = config;
 ```
 
 **`.stylelintrc`**
