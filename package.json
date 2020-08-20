@@ -1,6 +1,6 @@
 {
   "name": "@defencedigital/r2d2-lint-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "files": [
     "index.js",
     "stylelint.config.js",
