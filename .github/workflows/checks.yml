@@ -1,0 +1,23 @@
+name: React component library
+
+
+on:
+  push:
+    branches:
+      - "*"
+
+
+env:
+  CI: true
+
+
+jobs:
+  check:
+    name: Check and test
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Dependency audit
+        run: ./run_audit.sh
