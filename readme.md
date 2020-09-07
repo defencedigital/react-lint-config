@@ -1,4 +1,4 @@
-# R2D2 Lint Config
+# React Lint Config
 
 This package provides linting configuration to React Apps.
 
@@ -9,13 +9,13 @@ This package can be installed via `yarn` or `npm`
 ### npm
 
 ```shell
-npm install @defencedigital/r2d2-lint-config
+npm install @defencedigital/react-lint-config
 ```
 
 ### yarn
 
 ```shell
-yarn add @defencedigital/r2d2-lint-config
+yarn add @defencedigital/react-lint-config
 ```
 
 ## Configuration
@@ -25,7 +25,7 @@ In the root of your project create the following files:
 **`.eslintrc.js`**
 
 ```js
-const config = require('@defencedigital/r2d2-lint-config');
+const config = require('@defencedigital/react-lint-config');
 module.exports = config;
 ```
 
@@ -33,6 +33,6 @@ module.exports = config;
 
 ```json
 {
-  "extends": ["@defencedigital/r2d2-lint-config/stylelint.config"]
+  "extends": ["@defencedigital/react-lint-config/stylelint.config"]
 }
 ```

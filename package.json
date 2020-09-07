@@ -1,5 +1,5 @@
 {
-  "name": "@defencedigital/r2d2-lint-config",
+  "name": "@defencedigital/react-lint-config",
   "version": "0.0.5",
   "files": [
     "index.js",
@@ -30,12 +30,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/defencedigital/r2d2-eslint.git"
+    "url": "git+https://github.com/defencedigital/react-lint-config.git"
   },
   "description": "This package provides linting configuration to React Apps",
   "bugs": {
-    "url": "https://github.com/defencedigital/r2d2-eslint/issues"
+    "url": "https://github.com/defencedigital/react-lint-config/issues"
   },
-  "homepage": "https://github.com/defencedigital/r2d2-eslint#readme",
+  "homepage": "https://github.com/defencedigital/react-lint-config#readme",
   "main": "index.js"
 }
