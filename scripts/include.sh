@@ -1,5 +1,41 @@
 #!/usr/bin/env bash
 
+IMAGE_NAME=${CI_IMAGE:-"r2d2-lint-config_ci_support_image"}
+CI=${CI:-"false"}
+
+_pushd(){
+    command pushd "$@" > /dev/null
+}
+
+_popd(){
+    command popd > /dev/null
+}
+
+exec_in_container() {
+    if ! docker pull "$IMAGE_NAME"; then
+        _pushd "${PROJECT_ROOT}"
+        docker build --pull -t "$IMAGE_NAME" -f ./Dockerfile .
+        exitonfail $? "Docker build"
+        _popd
+    fi
+
+    CONT_USER=$(id -u):$(id -g)
+    OPTS="-it --init"
+
+    if [ "$CI" == "true" ]; then
+        CONT_USER=0
+        OPTS="-t -e CI=$CI"
+    fi
+
+    # args cannot eb quoted
+    # shellcheck disable=SC2086
+    docker run --rm $OPTS -u="$CONT_USER" --name "$IMAGE_NAME" \
+        -v "$PROJECT_ROOT/:/usr/app/" \
+        --network=host \
+        "$IMAGE_NAME" "$@"
+}
+
+
 exitonfail() {
     if [ "$1" -ne "0" ]
     then
@@ -35,4 +71,9 @@ echo_success(){
 echo_danger(){
     red='\033[0;31;1m'
     echo_colour "$1" "${red}"
+}
+
+echo_info(){
+  cyan='\033[0;36;1m'
+  echo_colour "$1" "${cyan}"
 }

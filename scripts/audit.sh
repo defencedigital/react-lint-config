@@ -1,18 +1,23 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
-PROJECT_ROOT="$(cd "$(dirname "$0")" && pwd)/../"
-
 CI="${CI:-false}"
 
-source "$PROJECT_ROOT/scripts/include.sh"
+source "./scripts/include.sh"
 
-ALLOWED_LICENSES=$(echo "$(cat $PROJECT_ROOT/licenses.json)" | jq -c '.[]')
-if [ "$ALLOWED_LICENSES" == "" ]; then
+LICENSE_LIST="$(jq -c -r '.[]' < ./licenses.json)"
+
+if [ "$LICENSE_LIST" == "" ]; then
     exitonfail 1 "License list import"
 fi
 
-npx license-checker --onlyAllow "$(echo $ALLOWED_LICENSES | sed -E "s/\" /;/g" | sed -E "s/\"//g")"
+ALLOWED_LICENSES=""
+IFS=$'\n'
+for LICENSE in $LICENSE_LIST; do
+    ALLOWED_LICENSES="${ALLOWED_LICENSES}${LICENSE};"
+done
+
+npx license-checker --onlyAllow "$ALLOWED_LICENSES"
 exitonfail $? "License check"
 
 yarn audit
