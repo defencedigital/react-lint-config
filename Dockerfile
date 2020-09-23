@@ -22,5 +22,4 @@ COPY yarn.lock yarn.lock
 
 RUN yarn install
 
-
 COPY . /usr/app

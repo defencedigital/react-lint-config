@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IMAGE_NAME=${CI_IMAGE:-"r2d2-lint-config_ci_support_image"}
+IMAGE_NAME=${CI_IMAGE:-"defencedigital-lint-config_ci_support_image"}
 CI=${CI:-"false"}
 
 _pushd(){
@@ -30,7 +30,6 @@ exec_in_container() {
     # args cannot eb quoted
     # shellcheck disable=SC2086
     docker run --rm $OPTS -u="$CONT_USER" --name "$IMAGE_NAME" \
-        -v "$PROJECT_ROOT/:/usr/app/" \
         --network=host \
         "$IMAGE_NAME" "$@"
 }
