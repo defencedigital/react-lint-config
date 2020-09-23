@@ -26,7 +26,7 @@ if [ $EXIT -gt 3 ]; then
 fi
 if [ $EXIT -gt 0 ]; then
     echo_warning "Security audit passed with warnings"
-    exit 1
+    exit 0
 fi
 
 echo_success "Audit passed"
