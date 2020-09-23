@@ -14,9 +14,6 @@ fi
 npx license-checker --onlyAllow "$LICENSE_LIST"
 exitonfail $? "License check"
 
-echo "$LICENSE_LIST"
-exit
-
 yarn audit
 EXIT=$?
 

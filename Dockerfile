@@ -2,8 +2,6 @@ FROM node:12-alpine
 
 RUN apk add --no-cache bash=5.0.11-r1 jq=1.6-r0 curl=7.67.0-r1
 
-RUN yarn global add license-checker
-
 # install hadolint (Dockerfile linter)
 RUN curl -L "https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64"  -o "hadolint" \
   && chmod +x hadolint \
