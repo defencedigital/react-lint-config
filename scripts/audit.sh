@@ -5,13 +5,17 @@ CI="${CI:-false}"
 
 source "./scripts/include.sh"
 
-LICENSE_LIST="$(cat ./licenses.json | jq -c -r '.[]' | tr '\n' ';')"
+LICENSE_LIST="$(< ./licenses.json jq -c -r '.[]' | tr '\n' ';')"
+
 if [ "$LICENSE_LIST" == "" ]; then
     exitonfail 1 "License list import"
 fi
 
 npx license-checker --onlyAllow "$LICENSE_LIST"
 exitonfail $? "License check"
+
+echo "$LICENSE_LIST"
+exit
 
 yarn audit
 EXIT=$?
