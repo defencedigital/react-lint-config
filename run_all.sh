@@ -6,4 +6,4 @@ PROJECT_ROOT="$(cd "$(dirname "$0")" && pwd)"
 
 source "$PROJECT_ROOT/scripts/include.sh"
 
-exec_in_container ./scripts/audit.sh "$@"
+exec_in_container ./scripts/all.sh

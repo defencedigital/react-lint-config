@@ -19,5 +19,8 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
+      - name: Static analysis
+        run: ./run_static_analysis.sh
+
       - name: Dependency audit
         run: ./run_audit.sh
