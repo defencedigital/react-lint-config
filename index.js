@@ -40,7 +40,9 @@ module.exports = {
     }],
     "semi": ["error", "always"],
     "no-dupe-keys": "error",
-    "quotes": ["warn", "single", { "avoidEscape": true }]
+    "quotes": ["warn", "single", { "avoidEscape": true }],
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": 2
   },
   settings: {
     react: {
