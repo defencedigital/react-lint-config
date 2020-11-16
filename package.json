@@ -1,5 +1,5 @@
 {
-  "name": "@defencedigital/react-lint-config",
+  "name": "@rainthief/react-lint-config",
   "version": "0.0.4",
   "files": [
     "index.js",
@@ -31,12 +31,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/defencedigital/react-lint-config.git"
+    "url": "git+https://github.com/rainthief/react-lint-config.git"
   },
   "description": "This package provides linting configuration to React Apps",
   "bugs": {
-    "url": "https://github.com/defencedigital/react-lint-config/issues"
+    "url": "https://github.com/rainthief/react-lint-config/issues"
   },
-  "homepage": "https://github.com/defencedigital/react-lint-config#readme",
+  "homepage": "https://github.com/rainthief/react-lint-config#readme",
   "main": "index.js"
 }

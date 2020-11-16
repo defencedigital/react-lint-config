@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IMAGE_NAME=${CI_IMAGE:-"defencedigital-lint-config_ci_support_image"}
+IMAGE_NAME=${CI_IMAGE:-"rainthief-lint-config_ci_support_image"}
 CI=${CI:-"false"}
 
 _pushd(){
