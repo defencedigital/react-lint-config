@@ -42,7 +42,17 @@ module.exports = {
     "no-dupe-keys": "error",
     "quotes": ["warn", "single", { "avoidEscape": true }],
     "no-unused-vars": 0,
-    "@typescript-eslint/no-unused-vars": 2
+    "@typescript-eslint/no-unused-vars": 2,
+    "@typescript-eslint/member-delimiter-style": ["error",{
+      "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+      },
+      "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+      }
+    }],
   },
   settings: {
     react: {
