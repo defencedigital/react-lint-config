@@ -9,6 +9,9 @@ on:
 
 env:
   CI: true
+  GITHUB_TOKEN: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+  GIT_URL: github.com/defencedigital/react-lint-config.git
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
 jobs:
@@ -41,8 +44,7 @@ jobs:
           git config user.email gh-actions-${GITHUB_ACTOR}@github.com
           yarn version --new-version patch
           git add package.json
-          git push
-          git push --tags
+          git push "https://$GITHUB_TOKEN@$GIT_URL" --tags
 
       - name: Publish release
         run: |
