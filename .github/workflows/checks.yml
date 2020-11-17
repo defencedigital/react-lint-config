@@ -24,3 +24,27 @@ jobs:
 
       - name: Dependency audit
         run: ./run_audit.sh
+
+
+  publish:
+    name: Tag and publish
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-20.04
+    needs: [check]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Tag release
+        run: |
+          git config user.name $GITHUB_ACTOR
+          git config user.email gh-actions-${GITHUB_ACTOR}@github.com
+          yarn version --new-version patch
+          git add package.json
+          git push
+          git push --tags
+
+      - name: Publish release
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+          npm publish
