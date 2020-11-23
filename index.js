@@ -43,7 +43,7 @@ module.exports = {
     "quotes": ["warn", "single", { "avoidEscape": true }],
     "no-unused-vars": 0,
     "@typescript-eslint/no-unused-vars": 2,
-    "@typescript-eslint/member-delimiter-style": ["error",{
+    "@typescript-eslint/member-delimiter-style": ["error", {
       "multiline": {
           "delimiter": "semi",
           "requireLast": true
@@ -53,6 +53,7 @@ module.exports = {
           "requireLast": false
       }
     }],
+    "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
   },
   settings: {
     react: {
