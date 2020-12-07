@@ -54,17 +54,6 @@ module.exports = {
       }
     }],
     "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        "selector": "interface",
-        "format": ["PascalCase"],
-        "custom": {
-          "regex": "^I[A-Z]",
-          "match": true
-        }
-      }
-    ],
   },
   settings: {
     react: {
