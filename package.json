@@ -22,8 +22,10 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-security": "^1.4.0",
     "license-checker-rseidelsohn": "^1.1.2",
+    "stylelint": "^13.8.0",
     "stylelint-config-sass-guidelines": "7.1.0",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "ts-jest": "^26.4.4"
   },
   "peerDependencies": {
     "eslint": "^7.6.0",
