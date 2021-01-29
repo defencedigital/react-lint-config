@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IMAGE_NAME=${CI_IMAGE:-"defencedigital-lint-config_ci_support_image"}
+IMAGE_NAME=${CI_IMAGE:-"ghcr.io/defencedigital/lint-config_ci_support_image:0.0.1"}
 CI=${CI:-"false"}
 
 _pushd(){
@@ -16,8 +16,11 @@ exec_in_container() {
         _pushd "${PROJECT_ROOT}"
         docker build --pull -t "$IMAGE_NAME" -f ./Dockerfile .
         exitonfail $? "Docker build"
+        # docker push "$IMAGE_NAME"
         _popd
     fi
+
+    CONT_NAME=$(basename "$IMAGE_NAME" | sed -r 's/:(.*)//' )
 
     CONT_USER=$(id -u):$(id -g)
     OPTS="-it --init"
@@ -27,9 +30,9 @@ exec_in_container() {
         OPTS="-t -e CI=$CI"
     fi
 
-    # args cannot eb quoted
+    # args cannot be quoted
     # shellcheck disable=SC2086
-    docker run --rm $OPTS -u="$CONT_USER" --name "$IMAGE_NAME" \
+    docker run --rm $OPTS -u="$CONT_USER" --name "$CONT_NAME" \
         --network=host \
         "$IMAGE_NAME" "$@"
 }
