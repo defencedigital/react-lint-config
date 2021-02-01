@@ -12,6 +12,9 @@ env:
   GITHUB_TOKEN: ${{ secrets.ADMIN_GITHUB_TOKEN }}
   GIT_URL: github.com/defencedigital/react-lint-config.git
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  DOCKER_USER: ${{ github.actor }}
+  DOCKER_PASS: ${{ secrets.DOCKER_TOKEN }}
+  DOCKER_REG: ghcr.io
 
 
 jobs:

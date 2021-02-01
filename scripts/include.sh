@@ -12,6 +12,15 @@ _popd(){
 }
 
 exec_in_container() {
+    CONT_USER=$(id -u):$(id -g)
+    OPTS="-it --init"
+
+    if [ "$CI" == "true" ]; then
+        CONT_USER=0
+        OPTS="-t -e CI=$CI"
+        docker login "$DOCKER_REG" -u "$DOCKER_USER" -p "$DOCKER_PASS"
+    fi
+
     if ! docker pull "$IMAGE_NAME"; then
         _pushd "${PROJECT_ROOT}"
         docker build --pull -t "$IMAGE_NAME" -f ./Dockerfile .
@@ -21,14 +30,6 @@ exec_in_container() {
     fi
 
     CONT_NAME=$(basename "$IMAGE_NAME" | sed -r 's/:(.*)//' )
-
-    CONT_USER=$(id -u):$(id -g)
-    OPTS="-it --init"
-
-    if [ "$CI" == "true" ]; then
-        CONT_USER=0
-        OPTS="-t -e CI=$CI"
-    fi
 
     # args cannot be quoted
     # shellcheck disable=SC2086
