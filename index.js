@@ -26,6 +26,7 @@ module.exports = {
     'plugin:import/warnings'
   ],
   rules: {
+    '@typescript-eslint/no-non-null-assertion': 0,
     "no-undef": [ "error" ],
     "no-unused-vars": [ "error", { "vars": "local" } ],
     "indent": ["error", 2],

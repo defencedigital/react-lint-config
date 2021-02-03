@@ -15,6 +15,5 @@ module.exports = {
     'scss/at-rule-no-unknown': true,
     'max-nesting-depth': 4,
     'indentation': 2,
-    '@typescript-eslint/no-non-null-assertion': 0
   },
 }
