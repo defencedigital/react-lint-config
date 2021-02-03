@@ -1,6 +1,6 @@
 {
   "name": "@defencedigital/react-lint-config",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "files": [
     "index.js",
     "stylelint.config.js",
