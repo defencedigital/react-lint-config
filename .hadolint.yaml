@@ -1,0 +1,3 @@
+# disable pinned version check as alpine dependencies deprecate too quickly
+ignored:
+  - DL3018

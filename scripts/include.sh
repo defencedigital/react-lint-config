@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-IMAGE_NAME=${CI_IMAGE:-"ghcr.io/defencedigital/lint-config_ci_support_image:0.0.1"}
+IMAGE_NAME=${CI_IMAGE:-"ghcr.io/defencedigital/lint-config_ci_support_image:2"}
 CI=${CI:-"false"}
 
 _pushd(){
-    command pushd "$@" > /dev/null
+    command pushd "$@" > /dev/null || return
 }
 
 _popd(){
-    command popd > /dev/null
+    command popd > /dev/null || return
 }
 
 exec_in_container() {
@@ -25,7 +25,7 @@ exec_in_container() {
         _pushd "${PROJECT_ROOT}"
         docker build --pull -t "$IMAGE_NAME" -f ./Dockerfile .
         exitonfail $? "Docker build"
-        # docker push "$IMAGE_NAME"
+        docker push "$IMAGE_NAME"
         _popd
     fi
 
