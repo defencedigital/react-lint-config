@@ -18,21 +18,21 @@
     "@typescript-eslint/eslint-plugin": "4.26.1",
     "@typescript-eslint/parser": "4.26.1",
     "eslint-config-react-app": "6.0.0",
-    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jest": "24.1.3",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-react": "7.21.5",
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-security": "^1.4.0",
-    "license-checker-rseidelsohn": "^1.1.2",
-    "stylelint": "^13.13.1",
+    "license-checker-rseidelsohn": "^4.2.6",
+    "stylelint": "^15.9.0",
     "stylelint-config-sass-guidelines": "8.0.0",
     "stylelint-config-standard": "^20.0.0",
     "ts-jest": "^26.4.4"
   },
   "peerDependencies": {
     "eslint": "^7.6.0",
-    "stylelint": "^13.13.1"
+    "stylelint": "^15.9.0"
   },
   "repository": {
     "type": "git",
